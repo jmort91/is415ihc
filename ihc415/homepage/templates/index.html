@@ -5,34 +5,79 @@
     <title>IHC | Dashboard</title>
 
     <script src="https://public.tableau.com/javascripts/api/tableau-2.js"></script>
-    <script src="C:/Users/kelli/ihc415/ihc415/homepage/scripts/js/ihctab1.js"></script>
+    <script src="../scripts/js/ihctab1.js"></script>
+
+
+    <!-- scripts for "mixitup" tiles -->
+    <link rel="stylesheet" type="text/css" href="../styles/css/MixUp.css"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script type="text/javascript" src="../scripts/js/jquery.mixitup.js"></script>
+    <link rel="stylesheet" type="text/css" href="../styles/css/ilightbox.css"/>
+    <script type="text/javascript" src="../scripts/js/jquery.requestAnimationFrame.js"></script>
+    <script type="text/javascript" src="../scripts/js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="../scripts/js/ilightbox.packed.js"></script> 
+    <script type="text/javascript" src="../scripts/js/tableau_v8.js"></script>
+
+    <script>
+        function initialize()
+            {
+                console.log("It's working! It's working!");
+                $('#SandBox').mixItUp();     
+
+                $('img').on("click", function (e) {      
+                    $.iLightBox([
+                      {
+                        URL: "https://public.tableau.com/views" + $(this).attr("vpath"),
+                        type: 'iframe',
+                        options: {
+                          width: $(this).attr("vizwidth"),
+                          height: $(this).attr("vizheight")
+                        },
+
+                      }
+                    ],
+                    {skin: "metro-white" , 
+                     controls: { 
+                         fullscreen: false 
+                     } 
+                    }
+                     );
+                  });                    
+            }
+     </script>
+
+
+
+
+
+
 
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
     <meta name="keywords" content="Admin, Bootstrap 3, Template, Theme, Responsive">
     <!-- bootstrap 3.0.2 -->
-    <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- font Awesome -->
-    <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Ionicons -->
-    <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <!-- Morris chart -->
-    <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/morris/morris.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/css/morris/morris.css" rel="stylesheet" type="text/css" />
     <!-- jvectormap -->
-    <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
     <!-- Date Picker -->
-    <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/datepicker/datepicker3.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/css/datepicker/datepicker3.css" rel="stylesheet" type="text/css" />
     <!-- fullCalendar -->
     <!-- <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" /> -->
     <!-- Daterange picker -->
-    <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
     <!-- iCheck for checkboxes and radio inputs -->
-    <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/iCheck/all.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/css/iCheck/all.css" rel="stylesheet" type="text/css" />
     <!-- bootstrap wysihtml5 - text editor -->
     <!-- <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" /> -->
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <!-- Theme style -->
-    <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/css/style.css" rel="stylesheet" type="text/css" />
 
 
 
@@ -47,25 +92,115 @@
 
           </style>
       </head>
-      <body class="skin-black" onload="initViz();">
+
+
+
+
+      <body class="skin-black">
         <!-- header logo: style can be found in header.less -->
         <header class="header">
             <a href="index.html" class="logo">
                 IHC
             </a>
             <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top" role="navigation">
-                <!-- Sidebar toggle button-->
-                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <div class="navbar-right">
-                </div>
-            </nav>
+                <nav class="navbar navbar-default navbar-fixed-top">
+                  <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                      <a class="navbar-brand" href="../templates/index.html">IHC Project Management</a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                      <ul class="nav navbar-nav">
+                        <li class="active"><a href="../templates/index.html">Tiles</a></li>
+                        <li><a href="../templates/simple.html">Dashboards</a></li>
+                        <li><a href="../templates/general.html">What If</a></li>
+                    </div><!-- /.navbar-collapse -->
+                  </div><!-- /.container-fluid -->
+                </nav>
         </header>
+
+
+
+                                        <div class="master-container">
+                                        <section>
+                                            <div class="control-bar sandbox-control-bar">
+                                                <div class="group">
+                                                    <label>Sort:</label>
+                                                    <span class="btn sort active" data-sort="random">Random</span>
+                                                    <span class="btn sort" data-sort="value:asc">Ascending</span>
+                                                    <span class="btn sort" data-sort="value:desc">Descending</span>
+                                                </div>
+                                                <div class="group">
+                                                    <label>Filter:</label>
+                                                    <span class="btn filter active" data-filter="all">All</span>
+                                                    <span class="btn filter" data-filter=".category-1">Chart 1</span>
+                                                    <span class="btn filter" data-filter=".category-2">Chart 2</span>
+                                                    <span class="btn filter" data-filter=".category-3">Chart 3</span>
+                                                    <span class="btn filter" data-filter="none">None</span>
+
+                                                </div>
+                                            </div>
+                                            <div id="SandBox" class="sandbox">
+                                                <div class="mix category-1" data-value="1"><img vpath="/IHCChart1/CompletedProjectsMonth?:embed=y&:display_count=yes" vizheight="15px" vizwidth="15px" src="../media/img/thumb1.jpg"  alt="some_text"></div>
+
+                                                <div class="mix category-1" data-value="2"><img vpath="/IHCChart1/PercentProjectsInvolvingPhysicians?:embed=y&:display_count=yes" vizheight="700" vizwidth="700" src="../media/img/thumb2.jpg" alt="some_text"></div>
+
+                                                <div class="mix category-1" data-value="3"><img vpath="/IHCChart1/AverageProjectDurationWeeks?:embed=y&:display_count=yes" vizheight="1400" vizwidth="1200" src="../media/img/thumb3.jpg" alt="some_text"></div>
+
+                                                <div class="mix category-1" data-value="4"><img vpath="/IHCChart1/PercentProjectswithCostSavings?:embed=y&:display_count=yes" vizheight="600" vizwidth="700" src="../media/img/thumb4.jpg" alt="some_text"></div>
+
+                                                <div class="mix category-1" data-value="5"><img vpath="/IHCChart1/ProjectsinQueue?:embed=y&:display_count=yes" vizheight="600" vizwidth="730" src="../media/img/thumb5.jpg" alt="some_text"></div>
+
+                                                <div class="mix category-1" data-value="6"><img vpath="/IHCChart1/ActiveProjects?:embed=y&:display_count=yes" vizheight="850" vizwidth="1050"  src="../media/img/thumb6.jpg" alt="some_text"></div>
+
+                                                <div class="mix category-1" data-value="7"><img vpath="/IHCChart1/CompletedProjects?:embed=y&:display_count=yes" vizheight="800" vizwidth="550"  src="../media/img/thumb7.jpg" alt="some_text"></div> 
+
+
+
+
+                                                <div class="mix category-2" data-value="8"><img vpath="/IHCChart2/ProjectedSavingsforPlannedProjects?:embed=y&:display_count=yes" vizheight="950" vizwidth="1150" src="../media/img/thumb8.jpg" alt="some_text"></div>
+
+                                                <div class="mix category-2" data-value="9"><img vpath="/IHCChart2/ProjectedSavingsforCompletedProjects?:embed=y&:display_count=yes" vizheight="1100" vizwidth="1300"   src="../media/img/thumb9.jpg" alt="some_text"></div>
+
+                                                <div class="mix category-2" data-value="10"><img vpath="/IHCChart2/ValidatedSavingsforCompletedProjects?:embed=y&:display_count=yes" vizheight="666" vizwidth="1016"  src="../media/img/thumb10.jpg" alt="some_text"></div>
+
+                                                <div class="mix category-2" data-value="11"><img vpath="/IHCChart2/ProjectsbyStatus?:embed=y&:display_count=yes" vizheight="900" vizwidth="1050"   src="../media/img/thumb11.jpg" alt="some_text"></div>
+
+
+
+
+                                                <div class="mix category-3" data-value="12"><img vpath="/IHC-Chart3/CostSavings?:embed=y&:display_count=yes" vizheight="600" vizwidth="800"  src="../media/img/thumb12.jpg" alt="some_text"></div>
+
+                                                <div class="mix category-3" data-value="13"><img vpath="/IHC-Chart3/Validated?:embed=y&:display_count=yes" vizheight="600" vizwidth="800"  src="../media/img/thumb13.jpg" alt="some_text"></div>
+
+
+                                                <div class="gap"></div>
+                                                <div class="gap"></div>
+                                            </div>
+                                        </section>
+                                        </div>
+                                           
+                                            <script type="text/javascript">
+                                                // Initialize the app on document ready.
+                                                $(initialize);
+                                            </script>
+
+
+
+
+
+
+
+
+
 
 
                     <!-- Main row -->
@@ -77,47 +212,42 @@
                             <!--earning graph start-->
                             <section class="panel">
                                 <header class="panel-heading">
-                                    Dashboard 1
+                                    
                                 </header>
-                                <div class="panel-body">
+<!--                                 <div class="panel-body">
 
 
                                      <form name="tableau" id="tableau">
-<!--                                        <p>Select workbook sheets : 
-                                            <input type="button" name="dashboard"  value="Dashboard 1"                           onclick="switchView1();"        />
-                                            <input type="button" name="map"        value="Completed Projects/Month"              onclick="switchView2();"        />
-                                            <input type="button" name="categories" value="Percent Projects Involving Physicians" onclick="switchView3();"        />
-                                            <input type="button" name="cluster"    value="Average Project Duration (Weeks)"      onclick="switchView4();"        />
-                                            <input type="button" name="cluster"    value="Percent Projects with Cost Savings"    onclick="switchView5();"        />
-                                            <input type="button" name="cluster"    value="Projects in Queue"                     onclick="switchView6();"        />
-                                            <input type="button" name="cluster"    value="Active Projects"                       onclick="switchView7();"        />
-                                            <input type="button" name="cluster"    value="Completed Projects"                    onclick="switchView8();"        />
-                                        </p>
-                                        <p>Filter by region : 
-                                            <input type="button" name="all"        value="Regions"          onclick="filterSingleValue1();" />
-                                            <input type="button" name="uk"         value="Central Entities" onclick="filterSingleValue2();" />
-                                            <input type="button" name="us"         value="North Region"     onclick="filterSingleValue3();" />
-                                        </p>                                                                                          
-                                        <p>Select marks : 
-                                            <input type="button" name="cluster1"   value="Cluster 1" onclick="selectSingleValue1();" />
-                                            <input type="button" name="cluster2"   value="Cluster 2" onclick="selectSingleValue2();" />
-                                            <input type="button" name="cluster3"   value="Cluster 3" onclick="selectSingleValue3();" />
-                                        </p> -->
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
                                         <div id="tableauViz"></div>
+
+
                                         
+
                                         <br>
-                                        <!-- <div id="markDetails">Detailed information about data will be loaded here.</div> -->
+                                        <div id="markDetails">Detailed information about data will be loaded here.</div>
                                     </form>
 
 
                                     <!-- <canvas id="linechart" width="600" height="330">
                                         
                                     </canvas> -->
-                                </div>
+                                </div> -->
                                         </section>
                                         <!--earning graph end-->
 
@@ -140,97 +270,17 @@
 
 
         <!-- jQuery 2.0.2 -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-        <script href="C:/Users/kelli/ihc415/ihc415/homepage/scripts/js/jquery.min.js" type="text/javascript"></script>
-
+<!--         <script href="../scripts/js/jquery.min.js" type="text/javascript"></script>
+ -->
         <!-- jQuery UI 1.10.3 -->
-        <script href="C:/Users/kelli/ihc415/ihc415/homepage/scripts/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+        <script href="../scripts/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
         <!-- Bootstrap -->
-        <script href="C:/Users/kelli/ihc415/ihc415/homepage/scripts/js/bootstrap.min.js" type="text/javascript"></script>
+        <script href="../scripts/js/bootstrap.min.js" type="text/javascript"></script>
         <!-- daterangepicker -->
-        <script href="C:/Users/kelli/ihc415/ihc415/homepage/scripts/js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+        <script href="../scripts/js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
 
-        <script href="C:/Users/kelli/ihc415/ihc415/homepage/scripts/js/plugins/chart.js" type="text/javascript"></script>
+        <script href="../scripts/js/plugins/chart.js" type="text/javascript"></script>
 
-        <!-- datepicker
-        <script href="C:/Users/kelli/ihc415/ihc415/homepage/scripts/js/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>-->
-        <!-- Bootstrap WYSIHTML5
-        <script href="C:/Users/kelli/ihc415/ihc415/homepage/scripts/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>-->
-        <!-- iCheck -->
-        <script href="C:/Users/kelli/ihc415/ihc415/homepage/scripts/js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
-        <!-- calendar -->
-        <script href="C:/Users/kelli/ihc415/ihc415/homepage/scripts/js/plugins/fullcalendar/fullcalendar.js" type="text/javascript"></script>
 
-        <!-- IHC App -->
-        <script href="C:/Users/kelli/ihc415/ihc415/homepage/scripts/js/IHC/app.js" type="text/javascript"></script>
-
-        <!-- IHC dashboard demo (This is only for demo purposes) -->
-        <script href="C:/Users/kelli/ihc415/ihc415/homepage/scripts/js/IHC/dashboard.js" type="text/javascript"></script>
-
-        <!-- IHC for demo purposes -->
-        <script type="text/javascript">
-            $('input').on('ifChecked', function(event) {
-                // var element = $(this).parent().find('input:checkbox:first');
-                // element.parent().parent().parent().addClass('highlight');
-                $(this).parents('li').addClass("task-done");
-                console.log('ok');
-            });
-            $('input').on('ifUnchecked', function(event) {
-                // var element = $(this).parent().find('input:checkbox:first');
-                // element.parent().parent().parent().removeClass('highlight');
-                $(this).parents('li').removeClass("task-done");
-                console.log('not');
-            });
-
-        </script>
-        <script>
-            $('#noti-box').slimScroll({
-                height: '400px',
-                size: '5px',
-                BorderRadius: '5px'
-            });
-
-            $('input[type="checkbox"].flat-grey, input[type="radio"].flat-grey').iCheck({
-                checkboxClass: 'icheckbox_flat-grey',
-                radioClass: 'iradio_flat-grey'
-            });
-</script>
-<script type="text/javascript">
-    $(function() {
-                "use strict";
-                //BAR CHART
-                var data = {
-                    labels: ["January", "February", "March", "April", "May", "June", "July"],
-                    datasets: [
-                        {
-                            label: "My First dataset",
-                            fillColor: "rgba(220,220,220,0.2)",
-                            strokeColor: "rgba(220,220,220,1)",
-                            pointColor: "rgba(220,220,220,1)",
-                            pointStrokeColor: "#fff",
-                            pointHighlightFill: "#fff",
-                            pointHighlightStroke: "rgba(220,220,220,1)",
-                            data: [65, 59, 80, 81, 56, 55, 40]
-                        },
-                        {
-                            label: "My Second dataset",
-                            fillColor: "rgba(151,187,205,0.2)",
-                            strokeColor: "rgba(151,187,205,1)",
-                            pointColor: "rgba(151,187,205,1)",
-                            pointStrokeColor: "#fff",
-                            pointHighlightFill: "#fff",
-                            pointHighlightStroke: "rgba(151,187,205,1)",
-                            data: [28, 48, 40, 19, 86, 27, 90]
-                        }
-                    ]
-                };
-            new Chart(document.getElementById("linechart").getContext("2d")).Line(data,{
-                responsive : true,
-                maintainAspectRatio: false,
-            });
-
-            });
-            // Chart.defaults.global.responsive = true;
-</script>
 </body>
 </html>
