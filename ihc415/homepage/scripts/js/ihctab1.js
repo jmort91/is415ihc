@@ -5,8 +5,12 @@ var viz;
 
 //initialize function
 function initViz() {
-    var containerDiv = document.getElementById("tableauViz"),
+    var containerDiv = document.getElementById("tableauViz1"),
     url = "https://public.tableau.com/views/IHCChart1/Dashboard1?:embed=y&:display_count=yes";
+
+    url = "https://public.tableau.com/views/IHCChart2/ProjectsbyStatus?:embed=y&:display_count=yes";
+
+    url = "https://public.tableau.com/views/IHC-Chart3/Dashboard?:embed=y&:display_count=yes";
 
 	var options = {
 		//width: containerDiv.offsetWidth,
