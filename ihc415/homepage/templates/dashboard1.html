@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IHC | Dashboard</title>
+
+    <script src="https://public.tableau.com/javascripts/api/tableau-2.js"></script>
+
+
+    <script src="../styles/css/autoload.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="../scripts/js/jquery.classyloader.js"></script>
+    <script src="../scripts/js/jquery.timer.js"></script>
+
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta name="description" content="Developed By M Abdur Rokib Promy">
+    <meta name="keywords" content="Admin, Bootstrap 3, Template, Theme, Responsive">
+    <!-- bootstrap 3.0.2 -->
+    <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- font Awesome -->
+    <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Ionicons -->
+    <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <!-- Morris chart -->
+    <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/morris/morris.css" rel="stylesheet" type="text/css" />
+    <!-- jvectormap -->
+    <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+    <!-- Date Picker -->
+    <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/datepicker/datepicker3.css" rel="stylesheet" type="text/css" />
+    <!-- fullCalendar -->
+    <!-- <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" /> -->
+    <!-- Daterange picker -->
+    <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/iCheck/all.css" rel="stylesheet" type="text/css" />
+    <!-- bootstrap wysihtml5 - text editor -->
+    <!-- <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" /> -->
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <!-- Theme style -->
+    <link href="C:/Users/kelli/ihc415/ihc415/homepage/styles/css/style.css" rel="stylesheet" type="text/css" />
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+          <![endif]-->
+
+          <style type="text/css">
+
+          </style>
+          
+      </head>
+      <body class="skin-black" onload="initViz();">
+        <!-- header logo: style can be found in header.less -->
+
+            <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-default navbar-fixed-top">
+                  <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                      <a class="navbar-brand" href="../templates/index.html">IHC Project Management</a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="../templates/index.html">Tiles</a></li>
+                            <li class="active"><a href="../templates/dashboard1.html">Dashboard 1</a></li>
+                            <li><a href="../templates/dashboard2.html">Dashboard 2</a>
+                            <li><a href="../templates/dashboard3.html">Dashboard 3</a>
+                            <li><a href="../templates/whatif.html">What-If</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                  </div><!-- /.container-fluid -->
+                </nav>
+        </header>
+
+
+                    <!-- Main row -->
+                    <div class="row">
+
+
+<!-- TABLEAU 1 -->
+                        <div class="col-md-8">
+                            <!--earning graph start-->
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    Dashboards
+                                </header>
+
+                    <div id="container">
+                        <div id="div1" class="box1" style="left: 0px; top: 0px;"></div>
+                        <div class="clearfix" style="padding-top: 5%;">
+                            <canvas class="loader"></canvas>
+                        </div>
+                    </div>
+
+
+
+
+
+              </div>
+              <!-- row end -->
+                </section><!-- /.content -->
+                <div class="footer-main">
+                    Copyright &copy IHC, 2016
+                </div>
+            </aside><!-- /.right-side -->
+
+        </div><!-- ./wrapper -->
+
+
+        <!-- jQuery 2.0.2 -->
+<!--         <script href="../scripts/js/jquery.min.js" type="text/javascript"></script>
+ -->
+        <!-- jQuery UI 1.10.3 -->
+        <script href="../scripts/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+        <!-- Bootstrap -->
+        <script href="../scripts/js/bootstrap.min.js" type="text/javascript"></script>
+        <!-- daterangepicker -->
+        <script href="../scripts/js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+
+        <script href="../scripts/js/plugins/chart.js" type="text/javascript"></script>
+
+
+</body>
+
+
+
+<script>
+// Set refreshInterval in milliseconds.
+    
+var viz, refreshInterval = 5000, firstRun = true;
+    
+    function initialize() {
+
+        var placeholderDiv = document.getElementById("div1");
+        var url = "https://public.tableau.com/views/IHCChart1/Dashboard1?:embed=y&:display_count=no&:showVizHome=no";
+        var options = {
+            width: 900,
+            height: 600,
+            hideTabs: true,
+            hideToolbar: true,
+            onFirstInteractive: function() {
+
+
+            initLoader()
+
+            var timer = $.timer(function() {
+            
+                initLoader();
+            });
+            timer.set({ time : refreshInterval, autostart : true });
+                    
+            }
+        }
+
+        try {
+            viz = new tableauSoftware.Viz(placeholderDiv, url, options);
+        } catch (e) {
+            alert(e);
+        }
+    }
+
+    function initLoader(){
+        
+        //Don't run the first time. 
+        
+        if (firstRun == false)
+        { 
+            viz.refreshDataAsync();
+        }
+        else
+        {
+            firstRun=false;
+        }
+        
+        $('.loader').ClassyLoader({
+                    height: 100,
+                    width: 100,
+                    percentage: 100,
+                    speed: (refreshInterval / 100), 
+                    fontSize: '20px',
+                    diameter: 35,
+                    lineColor: 'rgba(155,155,155,1)',
+                    remainingLineColor: 'rgba(200,200,200,0.4)',
+                    lineWidth: 10
+                });
+        
+    }
+</script>
+
+
+<script type="text/javascript">
+    // Initialize the app on document ready.
+    $(initialize);
+</script>
+
+
+</html>
