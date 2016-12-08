@@ -103,178 +103,125 @@
                 IHC
             </a>
             <!-- Header Navbar: style can be found in header.less -->
-                <nav class="navbar navbar-default navbar-fixed-top">
-                  <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="../templates/index.html">IHC Project Management</a>
-                    </div>
+            <nav class="navbar navbar-default navbar-fixed-top">
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../templates/index.html">IHC Project Management</a>
+                </div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="../templates/index.html">Tiles</a></li>
-                            <li><a href="../templates/dashboard1.html">Dashboard 1</a></li>
-                            <li><a href="../templates/dashboard2.html">Dashboard 2</a>
-                            <li><a href="../templates/dashboard3.html">Dashboard 3</a>
-                            <li><a href="../templates/whatif.html">What-If</a></li>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                  </div><!-- /.container-fluid -->
-                </nav>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="../templates/index.html">Tiles</a></li>
+                        <li><a href="../templates/dashboard1.html">Dashboard 1</a></li>
+                        <li><a href="../templates/dashboard2.html">Dashboard 2</a>
+                        <li><a href="../templates/dashboard3.html">Dashboard 3</a>
+                        <li><a href="../templates/whatif.html">What-If</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
         </header>
 
 
-
-                                        <div class="master-container">
-                                        <section>
-                                            <div class="control-bar sandbox-control-bar">
-                                                <div class="group">
-                                                    <label>Sort:</label>
-                                                    <span class="btn sort active" data-sort="random">Random</span>
-                                                    <span class="btn sort" data-sort="value:asc">Ascending</span>
-                                                    <span class="btn sort" data-sort="value:desc">Descending</span>
-                                                </div>
-                                                <div class="group">
-                                                    <label>Filter:</label>
-                                                    <span class="btn filter active" data-filter="all">All</span>
-                                                    <span class="btn filter" data-filter=".category-1">Chart 1</span>
-                                                    <span class="btn filter" data-filter=".category-2">Chart 2</span>
-                                                    <span class="btn filter" data-filter=".category-3">Chart 3</span>
-                                                    <span class="btn filter" data-filter="none">None</span>
-
-                                                </div>
-                                            </div>
-                                            <div id="SandBox" class="sandbox">
-                                                <div class="mix category-1" data-value="1"><img vpath="/IHCChart1/CompletedProjectsMonth?:embed=y&:display_count=yes" vizheight="15px" vizwidth="15px" src="../media/img/thumb1.jpg"  alt="some_text"></div>
-
-                                                <div class="mix category-1" data-value="2"><img vpath="/IHCChart1/PercentProjectsInvolvingPhysicians?:embed=y&:display_count=yes" vizheight="700" vizwidth="700" src="../media/img/thumb2.jpg" alt="some_text"></div>
-
-                                                <div class="mix category-1" data-value="3"><img vpath="/IHCChart1/AverageProjectDurationWeeks?:embed=y&:display_count=yes" vizheight="1400" vizwidth="1200" src="../media/img/thumb3.jpg" alt="some_text"></div>
-
-                                                <div class="mix category-1" data-value="4"><img vpath="/IHCChart1/PercentProjectswithCostSavings?:embed=y&:display_count=yes" vizheight="600" vizwidth="700" src="../media/img/thumb4.jpg" alt="some_text"></div>
-
-                                                <div class="mix category-1" data-value="5"><img vpath="/IHCChart1/ProjectsinQueue?:embed=y&:display_count=yes" vizheight="600" vizwidth="730" src="../media/img/thumb5.jpg" alt="some_text"></div>
-
-                                                <div class="mix category-1" data-value="6"><img vpath="/IHCChart1/ActiveProjects?:embed=y&:display_count=yes" vizheight="850" vizwidth="1050"  src="../media/img/thumb6.jpg" alt="some_text"></div>
-
-                                                <div class="mix category-1" data-value="7"><img vpath="/IHCChart1/CompletedProjects?:embed=y&:display_count=yes" vizheight="800" vizwidth="550"  src="../media/img/thumb7.jpg" alt="some_text"></div> 
-
-
-
-
-                                                <div class="mix category-2" data-value="8"><img vpath="/IHCChart2/ProjectedSavingsforPlannedProjects?:embed=y&:display_count=yes" vizheight="950" vizwidth="1150" src="../media/img/thumb8.jpg" alt="some_text"></div>
-
-                                                <div class="mix category-2" data-value="9"><img vpath="/IHCChart2/ProjectedSavingsforCompletedProjects?:embed=y&:display_count=yes" vizheight="1100" vizwidth="1300"   src="../media/img/thumb9.jpg" alt="some_text"></div>
-
-                                                <div class="mix category-2" data-value="10"><img vpath="/IHCChart2/ValidatedSavingsforCompletedProjects?:embed=y&:display_count=yes" vizheight="666" vizwidth="1016"  src="../media/img/thumb10.jpg" alt="some_text"></div>
-
-                                                <div class="mix category-2" data-value="11"><img vpath="/IHCChart2/ProjectsbyStatus?:embed=y&:display_count=yes" vizheight="900" vizwidth="1050"   src="../media/img/thumb11.jpg" alt="some_text"></div>
-
-
-
-
-                                                <div class="mix category-3" data-value="12"><img vpath="/IHC-Chart3/CostSavings?:embed=y&:display_count=yes" vizheight="600" vizwidth="800"  src="../media/img/thumb12.jpg" alt="some_text"></div>
-
-                                                <div class="mix category-3" data-value="13"><img vpath="/IHC-Chart3/Validated?:embed=y&:display_count=yes" vizheight="600" vizwidth="800"  src="../media/img/thumb13.jpg" alt="some_text"></div>
-
-
-                                                <div class="gap"></div>
-                                                <div class="gap"></div>
-                                            </div>
-                                        </section>
-                                        </div>
-                                           
-                                            <script type="text/javascript">
-                                                // Initialize the app on document ready.
-                                                $(initialize);
-                                            </script>
-
-
-
-
-
-
-
-
-
-
-
-                    <!-- Main row -->
-                    <div class="row">
-
-
-<!-- TABLEAU 1 -->
-                        <div class="col-md-8">
-                            <!--earning graph start-->
-                            <section class="panel">
-                                <header class="panel-heading">
-                                    
-                                </header>
-<!--                                 <div class="panel-body">
-
-
-                                     <form name="tableau" id="tableau">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                        <div id="tableauViz"></div>
-
-
-                                        
-
-                                        <br>
-                                        <div id="markDetails">Detailed information about data will be loaded here.</div>
-                                    </form>
-
-
-                                    <!-- <canvas id="linechart" width="600" height="330">
-                                        
-                                    </canvas> -->
-                                </div>
-                                        </section>
-                                        <!--earning graph end-->
-
-                            </div>
-
-
-
-
-
-
-              </div>
-              <!-- row end -->
-                </section><!-- /.content -->
-                <div class="footer-main">
-                    Copyright &copy IHC, 2016
+        <p>
+            <br>
+            <br>
+        </p>
+
+
+        <div class="master-container">
+            <section>
+                <div class="control-bar sandbox-control-bar">
+                    <div class="group">
+                        <label>Sort:</label>
+                        <span class="btn sort active" data-sort="random">Random</span>
+                        <span class="btn sort" data-sort="value:asc">Ascending</span>
+                        <span class="btn sort" data-sort="value:desc">Descending</span>
+                    </div>
+                    <div class="group">
+                        <label>Filter:</label>
+                        <span class="btn filter active" data-filter="all">All</span>
+                        <span class="btn filter" data-filter=".category-1">Chart 1</span>
+                        <span class="btn filter" data-filter=".category-2">Chart 2</span>
+                        <span class="btn filter" data-filter=".category-3">Chart 3</span>
+                        <span class="btn filter" data-filter="none">None</span>
+
+                    </div>
                 </div>
-            </aside><!-- /.right-side -->
+                <div id="SandBox" class="sandbox">
+                    <div class="mix category-1" data-value="1"><img vpath="/IHCChart1/CompletedProjectsMonth?:embed=y&:display_count=yes" vizheight="15px" vizwidth="15px" src="../media/img/thumb1.jpg"  alt="some_text"></div>
 
-        </div><!-- ./wrapper -->
+                    <div class="mix category-1" data-value="2"><img vpath="/IHCChart1/PercentProjectsInvolvingPhysicians?:embed=y&:display_count=yes" vizheight="700" vizwidth="700" src="../media/img/thumb2.jpg" alt="some_text"></div>
+
+                    <div class="mix category-1" data-value="3"><img vpath="/IHCChart1/AverageProjectDurationWeeks?:embed=y&:display_count=yes" vizheight="1400" vizwidth="1200" src="../media/img/thumb3.jpg" alt="some_text"></div>
+
+                    <div class="mix category-1" data-value="4"><img vpath="/IHCChart1/PercentProjectswithCostSavings?:embed=y&:display_count=yes" vizheight="600" vizwidth="700" src="../media/img/thumb4.jpg" alt="some_text"></div>
+
+                    <div class="mix category-1" data-value="5"><img vpath="/IHCChart1/ProjectsinQueue?:embed=y&:display_count=yes" vizheight="600" vizwidth="730" src="../media/img/thumb5.jpg" alt="some_text"></div>
+
+                    <div class="mix category-1" data-value="6"><img vpath="/IHCChart1/ActiveProjects?:embed=y&:display_count=yes" vizheight="850" vizwidth="1050"  src="../media/img/thumb6.jpg" alt="some_text"></div>
+
+                    <div class="mix category-1" data-value="7"><img vpath="/IHCChart1/CompletedProjects?:embed=y&:display_count=yes" vizheight="800" vizwidth="550"  src="../media/img/thumb7.jpg" alt="some_text"></div> 
+
+
+
+
+                    <div class="mix category-2" data-value="8"><img vpath="/IHCChart2/ProjectedSavingsforPlannedProjects?:embed=y&:display_count=yes" vizheight="950" vizwidth="1150" src="../media/img/thumb8.jpg" alt="some_text"></div>
+
+                    <div class="mix category-2" data-value="9"><img vpath="/IHCChart2/ProjectedSavingsforCompletedProjects?:embed=y&:display_count=yes" vizheight="1100" vizwidth="1300"   src="../media/img/thumb9.jpg" alt="some_text"></div>
+
+                    <div class="mix category-2" data-value="10"><img vpath="/IHCChart2/ValidatedSavingsforCompletedProjects?:embed=y&:display_count=yes" vizheight="666" vizwidth="1016"  src="../media/img/thumb10.jpg" alt="some_text"></div>
+
+                    <div class="mix category-2" data-value="11"><img vpath="/IHCChart2/ProjectsbyStatus?:embed=y&:display_count=yes" vizheight="900" vizwidth="1050"   src="../media/img/thumb11.jpg" alt="some_text"></div>
+
+
+
+
+                    <div class="mix category-3" data-value="12"><img vpath="/IHC-Chart3/CostSavings?:embed=y&:display_count=yes" vizheight="600" vizwidth="800"  src="../media/img/thumb12.jpg" alt="some_text"></div>
+
+                    <div class="mix category-3" data-value="13"><img vpath="/IHC-Chart3/Validated?:embed=y&:display_count=yes" vizheight="600" vizwidth="800"  src="../media/img/thumb13.jpg" alt="some_text"></div>
+
+
+                    <div class="gap"></div>
+                    <div class="gap"></div>
+                </div>
+            </section>
+        </div>
+               
+        <script type="text/javascript">
+            // Initialize the app on document ready.
+            $(initialize);
+        </script>
+
+
+
+        <!-- Main row -->
+        <div class="row">
+            <div class="col-md-8">
+                <!--earning graph start-->
+                <section class="panel">
+                    <header class="panel-heading">
+                    </header>
+                </section>
+            </div>
+        </div>
+        <!-- row end -->
+        <div class="footer-main">
+            Copyright &copy IHC, 2016
+        </div>
 
 
         <!-- jQuery 2.0.2 -->
-<!--         <script href="../scripts/js/jquery.min.js" type="text/javascript"></script>
- -->
+    <!--         <script href="../scripts/js/jquery.min.js" type="text/javascript"></script>
+     -->
         <!-- jQuery UI 1.10.3 -->
         <script href="../scripts/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
         <!-- Bootstrap -->
@@ -285,6 +232,6 @@
         <script href="../scripts/js/plugins/chart.js" type="text/javascript"></script>
 
 
-</body>
+      </body>
 
 </html>
