@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <title>IHC | Dashboard</title>
 
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="../scripts/js/RadarChart.js"></script>
+
+
     <script src="https://public.tableau.com/javascripts/api/tableau-2.js"></script>
-
-
-    <script src="../styles/css/autoload.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-    <script src="../scripts/js/jquery.classyloader.js"></script>
-    <script src="../scripts/js/jquery.timer.js"></script>
+    <script src="C../scripts/js/whatif.js"></script>
 
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
@@ -51,7 +50,6 @@
           <style type="text/css">
 
           </style>
-          
       </head>
       <body class="skin-black" onload="initViz();">
         <!-- header logo: style can be found in header.less -->
@@ -74,36 +72,50 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li><a href="../templates/index.html">Tiles</a></li>
-                            <li class="active"><a href="../templates/dashboard1.html">Dashboard 1</a></li>
+                            <li><a href="../templates/dashboard1.html">Dashboard 1</a></li>
                             <li><a href="../templates/dashboard2.html">Dashboard 2</a>
                             <li><a href="../templates/dashboard3.html">Dashboard 3</a>
-                            <li><a href="../templates/graph.html">Project % Graph</a></li>
+                            <li class="active"><a href="../templates/graph.html">Project % Graph</a></li>
                             <li><a href="../templates/whatif.html">What-If</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container-fluid -->
                 </nav>
-        </header>
+
+            </header>
 
 
-                    <!-- Main row -->
-                    <div class="row">
+            <!-- Main row -->
+            <div class="row">
 
 
 <!-- TABLEAU 1 -->
-                        <div class="col-md-8">
-                            <!--earning graph start-->
-                            <section class="panel">
-                                <header class="panel-heading">
-                                    Dashboards
-                                </header>
+                <div class="col-md-8">
+                    <!--earning graph start-->
+                    <section class="panel">
+                        <header class="panel-heading">
+                            What-If Calculator
+                        </header>
+                        <div class="panel-body">
 
-                    <div id="container">
-                        <div id="div1" class="box1" style="left: 0px; top: 0px;"></div>
-                        <div class="clearfix" style="padding-top: 5%;">
-                            <canvas class="loader"></canvas>
-                        </div>
-                    </div>
+
+            <!-- display the graph -->
+            <br>
+            <br>
+            <div id="body">
+            <div id="chart"></div>
+            </div>
+
+            <script type="text/javascript" src="../scripts/js/script.js"></script>
+
+                    <!-- <canvas id="linechart" width="600" height="330">
+                        
+                    </canvas> -->
+                </div>
+                        </section>
+                        <!--earning graph end-->
+
+            </div>
 
 
 
@@ -134,75 +146,4 @@
 
 
 </body>
-
-
-
-<script>
-// Set refreshInterval in milliseconds.
-    // Set to refresh every 5 minutes
-var viz, refreshInterval = 300000, firstRun = true;
-    
-    function initialize() {
-
-        var placeholderDiv = document.getElementById("div1");
-        var url = "https://public.tableau.com/views/IHCChart1/Dashboard1?:embed=y&:display_count=no&:showVizHome=no";
-        var options = {
-            hideTabs: true,
-            hideToolbar: true,
-            onFirstInteractive: function() {
-
-
-            initLoader()
-
-            var timer = $.timer(function() {
-            
-                initLoader();
-            });
-            timer.set({ time : refreshInterval, autostart : true });
-                    
-            }
-        }
-
-        try {
-            viz = new tableauSoftware.Viz(placeholderDiv, url, options);
-        } catch (e) {
-            alert(e);
-        }
-    }
-
-    function initLoader(){
-        
-        //Don't run the first time. 
-        
-        if (firstRun == false)
-        { 
-            viz.refreshDataAsync();
-        }
-        else
-        {
-            firstRun=false;
-        }
-        
-        $('.loader').ClassyLoader({
-                    height: 100,
-                    width: 100,
-                    percentage: 100,
-                    speed: (refreshInterval / 100), 
-                    fontSize: '20px',
-                    diameter: 35,
-                    lineColor: 'rgba(155,155,155,1)',
-                    remainingLineColor: 'rgba(200,200,200,0.4)',
-                    lineWidth: 10
-                });
-        
-    }
-</script>
-
-
-<script type="text/javascript">
-    // Initialize the app on document ready.
-    $(initialize);
-</script>
-
-
 </html>
