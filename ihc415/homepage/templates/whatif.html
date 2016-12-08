@@ -5,7 +5,7 @@
     <title>IHC | Dashboard</title>
 
     <script src="https://public.tableau.com/javascripts/api/tableau-2.js"></script>
-    <script src="C:/Users/kelli/ihc415/ihc415/homepage/scripts/js/ihctab3.js"></script>
+    <script src="C../scripts/js/whatif.js"></script>
 
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
@@ -93,6 +93,18 @@
                                 </header>
                                 <div class="panel-body">
 
+                                    <div class="content">
+                                        <h3>Loan Repayment Prediction Calculator</h3>
+                                        <h4>Fill out the form below to receive a prediction as to whether the borrower will repay the proposed loan.</h4>
+                                        <form>
+                                        <table>
+                                            ${ form }
+                                        </table>
+                                        </form>
+                                        ## <input type="submit" value="Predict" id="predict_button">
+                                        <a id="predict" href="#">Get a Prediction</a>
+                                        <h4 id="prediction_display"></h4>
+                                    </div>
 
                                     <!-- <canvas id="linechart" width="600" height="330">
                                         
